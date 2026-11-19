@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap');
+
+html, body { margin: 0; padding: 0; }
+.eco-page, .eco-page * { box-sizing: border-box; }
+
+.eco-root {
+  min-height: 100vh; display: flex; flex-direction: column;
+  background: #faf7ee; color: #0b2418;
+  font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+/* Content center mein, zyada chaura nahi */
+.eco-page {
+  flex: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  width: 100%; max-width: 1080px; margin: 0 auto; padding: 16px 24px; gap: 8px;
+}
+
+.eco-header { display: flex; align-items: center; gap: 12px; padding: 10px 24px; border-bottom: 1px solid #e3e0d2; }
+.eco-logo { flex-shrink: 0; display: block; width: 40px; height: 40px; object-fit: contain; border-radius: 10px; }
+.eco-brand { display: flex; flex-direction: column; gap: 3px; }
+.eco-brand-top { align-self: flex-start; padding: 2px 9px; background: #e3ead3; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0a4228; }
+.eco-brand-name { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 700; line-height: 1.1; }
+
+.eco-scene { flex: 1 1 320px; padding: 12px; display: flex; justify-content: center; align-items: center; }
+.eco-panel { flex: 1 1 380px; padding: 12px; display: flex; justify-content: center; align-items: center; }
+.eco-svg { width: 100%; max-width: 340px; height: auto; }
+
+.eco-door { transform-box: fill-box; transform-origin: left center; animation: eco-door 9s ease-in-out infinite; }
+.eco-boy { animation: eco-boy 9s ease-in-out infinite; }
+@keyframes eco-door {
+  0%, 28% { transform: scaleX(1); }
+  40%, 62% { transform: scaleX(0.2); }
+  74%, 100% { transform: scaleX(1); }
+}
+@keyframes eco-boy {
+  0% { opacity: 0; transform: translateX(0); }
+  4% { opacity: 1; transform: translateX(0); }
+  30%, 44% { opacity: 1; transform: translateX(-110px); }
+  58%, 100% { opacity: 0; transform: translateX(-190px); }
+}
+@media (prefers-reduced-motion: reduce) { .eco-door, .eco-boy { animation: none; } }
+
+.eco-card {
+  width: 100%; max-width: 400px; padding: 24px 24px;
+  background: #fdfcf8; border: 1px solid #e3e0d2; border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(10, 66, 40, 0.09);
+  display: flex; flex-direction: column; gap: 14px;
+}
+.eco-badge {
+  align-self: flex-start; display: flex; align-items: center; gap: 6px;
+  padding: 6px 12px; background: #e3ead3; border-radius: 999px; font-size: 12px; font-weight: 700;
+}
+.eco-title { margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 25px; line-height: 1.15; }
+.eco-lead { margin: -6px 0 0; font-size: 13px; line-height: 1.5; color: #4d5b52; }
+
+.eco-form { display: flex; flex-direction: column; gap: 12px; }
+.eco-field { display: flex; flex-direction: column; gap: 6px; }
+.eco-label { font-size: 13px; font-weight: 600; }
+
+.eco-input-wrap { position: relative; display: flex; align-items: center; }
+.eco-icon { position: absolute; left: 13px; width: 18px; height: 18px; pointer-events: none; }
+.eco-input {
+  width: 100%; height: 40px; padding: 0 12px 0 38px; font: inherit; font-size: 14px; color: #0b2418;
+  background: #fff; border: 1.5px solid #8f998a; border-radius: 20px;
+}
+.eco-input-pw { padding-right: 48px; }
+.eco-input:focus { outline: 3px solid #b7e33a; outline-offset: 1px; border-color: #0a4228; }
+.eco-eye {
+  position: absolute; right: 3px; width: 36px; height: 36px; border: 0; border-radius: 18px;
+  background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.eco-eye:focus-visible, .eco-submit:focus-visible { outline: 3px solid #b7e33a; outline-offset: 2px; }
+
+.eco-error { margin: -6px 0 0; min-height: 18px; font-size: 13px; font-weight: 600; color: #b3261e; }
+
+.eco-submit {
+  height: 42px; width: 100%; border: 0; border-radius: 21px; background: #0a4228; color: #fff;
+  font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s ease;
+}
+.eco-submit:hover:not(:disabled) { background: #0d5632; }
+.eco-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.eco-link-btn { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+
+.eco-mail-ic { width: 48px; height: 48px; border-radius: 50%; background: #e3ead3; display: flex; align-items: center; justify-content: center; }
+.eco-note { margin: 0; font-size: 12px; line-height: 1.5; color: #4d5b52; }
+.eco-strong { font-weight: 700; word-break: break-all; color: #0b2418; }
+
+.eco-switch { margin: 0; text-align: center; font-size: 13px; color: #4d5b52; }
+.eco-switch a { font-weight: 700; color: #0a4228; text-decoration: none; }
+.eco-switch a:hover { text-decoration: underline; }
+.eco-switch a:focus-visible { outline: 3px solid #b7e33a; outline-offset: 2px; border-radius: 4px; }
+
+@media (max-width: 760px) {
+  .eco-page { padding: 8px 1px 20px; }
+  .eco-scene { padding: 8px 8px 0; }
+  .eco-scene .eco-svg { max-width: 240px; }
+  .eco-card { padding: 20px 18px; border-radius: 20px; }
+  .eco-title { font-size: 23px; }
+  .eco-header { padding: 10px 16px; gap: 10px; }
+  .eco-logo { width: 36px; height: 36px; }
+  .eco-brand-name { font-size: 18px; }
+}
